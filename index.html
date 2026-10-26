@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment/get-composer</title>
 </head>
 <body>
     <style>
-        div{
+        .all{
             border: 1px solid white; 
             margin: auto;
-            width: 900px;
+            width: 850px;
         }
         section{
-            font-family: helvetica (arial);
+            font-family: sans-serif;
         }
         header{
             font-family: helvetica (arial);
@@ -37,8 +37,7 @@
         }
         .pro{
             background-color: #f5f2f0;
-            padding-top: 20px;
-            overflow: auto;
+            border: 1px solid #f5f2f0;
         }
         .php{
             margin-left: 15px;
@@ -54,20 +53,85 @@
         }
         .use{
             text-align: center;
-            margin: 40px;
+            margin: 30px;
         }
         .me{
             text-align: center;
         }
-        footer{
-            margin-top: 40px;
-            font-size: x-small;
+        .step{
+            margin: 60px 15px 10px auto;
+            font-size: 11.05px;
             text-align: center;
+            color: #646464;
+            font-family: sans-serif;
+        }
+        .who{
+            color: #4444ff;
+            font-family: sans-serif;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .home{
+            border-right: 1px solid #cccccc;
+            padding-right: 5px;
+            /* height: 20%; */
+        }
+        .start{
+            color: black;
+            border-right: 1px solid #cccccc;
+            padding-right: 5px;
+            /* height: 20%; */
+        }
+        .load{
+            border-right: 1px solid #cccccc;
+            padding-right: 5px;
+        }
+        .docu{
+            border-right: 1px solid #cccccc;
+            padding-right: 5px;
+        }
+        .list{
+            color: #4444ff;
+            cursor: pointer;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+        .last{
+            margin-top: 10px;
+        }
+        .intro{
+            font-family: sans-serif;
+            font-size: 30px;
         }
     </style>
-    <div>
+    <div class="all">
+        <nav class="who">
+            <img src="https://getcomposer.org/img/logo-composer-transparent.png" alt="" style="height: 35px; margin-top: 10px;">
+            <span class="home">Home</span>
+            <span class="start">Getting Started</span>
+            <span class="load">Download</span>
+            <span class="docu">Documentation</span>
+            <span class="pack">Browse Packages</span>
+        </nav>
+        <ol class="list">
+            <li>Dependency management</li>
+            <li>System Requirements</li>
+            <li>System Requirements</li>
+            <ol>
+                <li>Downloading the Composer Executable</li>
+                <li>Locally</li>
+                <li>Globally</li>
+            </ol>
+            <li class="last">Installation - Windows</li>
+            <ol >
+                <li>Using the Installer</li>
+                <li>Manual Installation</li>
+            </ol>
+            <li class="last">Docker Image</li>
+            <li>Using Composer</li>
+        </ol>
      <header>
-        <h1>Introduction <a href="" class="hash">#</a></h1>
+        <p class="intro">Introduction <a href="" class="hash">#</a></p>
         <p>Composer is a tool for dependency management in PHP. It allows you to declare the
            libraries your project depends on and it will manage (install/update) them for you.
         </p>    
@@ -136,9 +200,11 @@
             (re)name it as well using the <code class="cod">--filename</code> option. When running the installer when 
             following <a href="#" class="nd"> the Download page instructions</a> add the following parameters:
         </p>
-        <pre class="pro" tabindex="0">
-            <code class="php">php composer-setup.php --install-dir=bin --filename=composer</code>
-        </pre>
+
+        <div class="pro">
+            <p class="php">php composer-setup.php --install-dir=bin --filename=composer</p>
+        </div>
+
         <p>Now run <code class="cod">php bin/composer</code> in order to run Composer.</p>
         <h4>Globally <a href="" class="hash">#</a></h4>
         <p>You can place the Composer PHAR anywhere you wish. If you put it in a directory that 
@@ -148,9 +214,9 @@
         <p>After running the installer following <a href="#" class="nd">the Download page instructions</a> you can run 
             this to move composer.phar to a directory that is in your path:
         </p>
-        <pre class="pro">
-            <code class="php">mv composer.phar /usr/local/bin/composer</code>
-        </pre>
+        <div class="pro">
+            <p class="php">mv composer.phar /usr/local/bin/composer</p>
+        </div>
         <p>If you like to install it only for your user and avoid requiring 
             root permissions, you can use <code class="cod">~/.local/bin</code> instead which is available 
             by default on some Linux distributions.
@@ -195,16 +261,16 @@
         <p>Create a new <code class="cod">composer.bat</code> file alongside <code class="cod">composer.phar</code> :</p>
         <p>Using cmd.exe:</p>
 
-        <pre class="pro">
-            <code class="php">C:\bin> echo @php "%~dp0composer.phar" %*>composer.bat</code>
-        </pre>
+        <div class="pro">
+            <p class="php">C:\bin> echo @php "%~dp0composer.phar" %*>composer.bat</p>
+        </div>
 
         <p>Using PowerShell:</p>
 
-        <pre class="pro">
+        <div class="pro">
 
-            <code class="php">PS C:\bin> Set-Content composer.bat '@php "%~dp0composer.phar" %*'</code>
-        </pre>
+            <p class="php">PS C:\bin> Set-Content composer.bat '@php "%~dp0composer.phar" %*'</p>
+        </div>
 
         <p>Add the directory to your PATH environment variable if it isn't already. For 
             information on changing your PATH variable, please see <a href="#" class="nd">this article</a> and/or 
@@ -212,12 +278,12 @@
         </p>
         <p>Close your current terminal. Test usage with a new terminal:</p>
 
-        <pre class="pro">
-            <code class="php">C:\Users\username>composer -V</code>
-        </pre>
-        <pre class="pro">
-            <code class="php">Composer version 2.4.0 2022-08-16 16:10:48</code>
-        </pre>
+        <div class="pro">
+            <p class="php">C:\Users\username>composer -V</p>
+        </div>
+        <div class="pro" style="margin-top: 10px;">
+            <p class="php">Composer version 2.4.0 2022-08-16 16:10:48</p>
+        </div>
      </section>
 
      <section>
@@ -227,20 +293,21 @@
         </p>
         <p>Example usage:</p>
 
-        <pre class="pro">
-            <code class="php">docker pull composer/composer</code>
-            <code class="php">docker run --rm -it -v "$(pwd):/app" composer/composer install</code>
-        </pre>
+        <div class="pro">
+            <p class="php">docker pull composer/composer</p>
+            <p class="php">docker run --rm -it -v "$(pwd):/app" composer/composer install</p>
+        </div>
 
         <p>To add Composer to an existing <b>Dockerfile</b> you can simply copy binary file from pre-built, low-size images:</p>
-        <pre class="pro">
-            <code class="php"># Latest release</code>
-            <code class="php">COPY --from=composer/composer:latest-bin /composer /usr/bin/composer</code>
-            <p>
-                <code class="php"># Specific release</code>
-                <code class="php">COPY --from=composer/composer:2-bin /composer /usr/bin/composer</code>
-            </p>
-        </pre>
+        <div class="pro">
+            <p class="php"># Latest release</p>
+            <p class="php">COPY --from=composer/composer:latest-bin /composer /usr/bin/composer</p>
+
+            <!-- <p style="margin-top: 15;"> -->
+                <p class="php" style="margin-top: 30px;"># Specific release</p>
+                <p class="php">COPY --from=composer/composer:2-bin /composer /usr/bin/composer</p>
+            <!-- </p> -->
+        </div>
 
         <p><b>Note:</b> you need to manually install other runtime dependencies inside your image when using this method; see also
             <a href=" https://github.com/composer/composer/blob/main/README.md#binary-dependencies" class="nd">
@@ -259,9 +326,11 @@
         <p class="use">
             <a href="#" class="nd">Basic usage</a> →
         </p>
-        <p class="me">Found a typo? Something is wrong in this documentation? <a href="#" class="nd">Fork and edit</a> it!</p>
+       
+        <p class="me"><img src="./github-AAKPZVQV.gif" alt="" style="padding-top: 5px;">Found a typo? Something is wrong in 
+            this documentation? <a href="#" class="nd">Fork and edit</a> it!</p>
      </section>
-     <footer>Composer and all content on this site are released under the <a href="#" class="nd">MIT license</a>.</footer>
+     <footer class="step">Composer and all content on this site are released under the <a href="#" class="nd">MIT license</a>.</footer>
     </div>
 </body>
 </html>
